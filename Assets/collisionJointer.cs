@@ -10,8 +10,9 @@ public class collisionJointer : MonoBehaviour {
 
 	void OnCollisionEnter(Collision coll)
 	{
-		JointScript.attach (this.gameObject, coll.gameObject);
-		JointScript.detach (this.gameObject, coll.gameObject);
+		Debug.Log ("Colliding!");
+		JointScript.Attach (this.gameObject, coll.gameObject);
+		JointScript.Detach (this.gameObject, coll.gameObject);
 	}
 	
 	// Update is called once per frame

@@ -19,7 +19,6 @@ public class ShipScript  : MonoBehaviour{
 	}
 
 	public void AddConnection(GameObject obj, GameObject obj2) {
-		JointScript.attach (obj, obj2);
 		AddConnectionPair (obj, obj2);
 		AddConnectionPair (obj2, obj);
 	}
@@ -31,7 +30,6 @@ public class ShipScript  : MonoBehaviour{
 	}
 
 	public void RemoveConnection(GameObject obj, GameObject obj2) {
-		JointScript.detach (obj, obj2);
 		RemoveConnectionPair (obj, obj2);
 		RemoveConnectionPair (obj2, obj);
 	}
@@ -81,5 +79,14 @@ public class ShipScript  : MonoBehaviour{
 
 		return true;
 	}	
+
+	public void AddJoints() {
+		foreach (GameObject key in shipGraph.Keys) {
+			foreach (GameObject value in shipGraph[key]) {
+				JointScript.Attach(key, value);
+			}
+		} 
+
+	}
 
 }

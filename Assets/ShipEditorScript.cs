@@ -37,11 +37,13 @@ public class ShipEditorScript : MonoBehaviour {
 
 
 	void OnTriggerEnter(Collider collider) {
+		Debug.Log ("TriggerEnter");
 		Utility.RegisterConnection (gameObject, collider.gameObject);
 
 	}
 
 	void OnTriggerExit(Collider collider) {
+		Debug.Log ("TriggerExit");
 		Utility.UnregisterConnection (gameObject, collider.gameObject);
 	}
 	

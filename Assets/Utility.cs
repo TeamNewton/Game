@@ -67,7 +67,7 @@ public class Utility {
 		gameObjects.AddRange (objects);	
 	}
 
-	private static ShipScript GetShipScript() {
+	public static ShipScript GetShipScript() {
 		GameObject[] objects = GameObject.FindGameObjectsWithTag("Command");
 		if (objects.Length == 0) {
 			return null;		

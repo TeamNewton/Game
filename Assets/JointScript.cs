@@ -8,8 +8,10 @@ public class JointScript : MonoBehaviour {
 	
 	}
 
-	public static void attach(GameObject obj1, GameObject obj2)
+	public static void Attach(GameObject obj1, GameObject obj2)
 	{
+		// obj1 and obj2 should have max 1 joint between them; remove any existing joints before adding new
+		Detach (obj1, obj2);
 
 		ConfigurableJoint joint = obj1.AddComponent<ConfigurableJoint>();
 
@@ -28,7 +30,7 @@ public class JointScript : MonoBehaviour {
 
 	}
 
-	public static void detach(GameObject obj1,GameObject obj2) 
+	public static void Detach(GameObject obj1,GameObject obj2) 
 	{
 		ConfigurableJoint[] joints = obj1.GetComponents<ConfigurableJoint> ();
 		if(joints != null) 
