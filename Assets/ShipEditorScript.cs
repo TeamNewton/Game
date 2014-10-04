@@ -36,12 +36,12 @@ public class ShipEditorScript : MonoBehaviour {
 	}
 
 
-	void OnTriggerEnter2D(Collider2D collider) {
+	void OnTriggerEnter(Collider collider) {
 		Utility.RegisterConnection (gameObject, collider.gameObject);
 
 	}
 
-	void OnTriggerExit2D(Collider2D collider) {
+	void OnTriggerExit(Collider collider) {
 		Utility.UnregisterConnection (gameObject, collider.gameObject);
 	}
 	

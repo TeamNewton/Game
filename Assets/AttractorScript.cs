@@ -12,14 +12,14 @@ public class AttractorScript : MonoBehaviour {
 		GameObject[] objects = GameObject.FindGameObjectsWithTag("VehicleBody");
 
 		foreach (GameObject obj in objects) {
-			if (obj.rigidbody2D == null) {
+			if (obj.rigidbody == null) {
 				continue;
 			}
 
 			var forceVector = obj.transform.position - transform.position;
 
 
-			obj.rigidbody2D.AddForce(forceVector.normalized * -0.05f);
+			obj.rigidbody.AddForce(forceVector.normalized * -0.05f);
 
 
 		}
