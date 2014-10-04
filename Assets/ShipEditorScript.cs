@@ -34,6 +34,16 @@ public class ShipEditorScript : MonoBehaviour {
 			transform.position = curPosition;
 		}
 	}
+
+
+	void OnTriggerEnter2D(Collider2D collider) {
+		Utility.RegisterConnection (gameObject, collider.gameObject);
+
+	}
+
+	void OnTriggerExit2D(Collider2D collider) {
+		Utility.UnregisterConnection (gameObject, collider.gameObject);
+	}
 	
 	// Update is called once per frame
 	void Update () {

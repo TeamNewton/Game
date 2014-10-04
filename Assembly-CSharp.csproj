@@ -47,12 +47,11 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\AttractorScript.cs" />
+     <Compile Include="Assets\EditorScripts.cs" />
      <Compile Include="Assets\EngineInitializationScript.cs" />
-     <Compile Include="Assets\OnSceneLoad.cs" />
      <Compile Include="Assets\ShipEditorScript.cs" />
      <Compile Include="Assets\ShipScript.cs" />
      <Compile Include="Assets\ThrusterScript.cs" />
-     <Compile Include="Assets\UIInitializationScript.cs" />
      <Compile Include="Assets\Utility.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/4.6.0/UnityEngine.UI.dll</HintPath>
