@@ -89,18 +89,15 @@ public class ShipScript  : MonoBehaviour{
 
 		foreach (GameObject key in shipGraph.Keys) {
 			foreach (GameObject value in shipGraph[key]) {
-				Debug.Log ("Preparing..\n");
-				DontDestroyOnLoad (key);
 				JointScript.Attach(key, value);
+			}
 
-				Destroy (key.GetComponent<EditorScripts>());
-				key.collider.isTrigger = false;
-
-				if (key.tag == "Engine") {
-					key.AddComponent<ThrusterScript>();
-				}
-
-
+			key.collider.isTrigger = false;
+			Destroy (key.GetComponent<ShipEditorScript>());
+			DontDestroyOnLoad (key);
+			if (key.tag == "Engine") {
+				Debug.Log ("Adding engine script..");
+				key.AddComponent<ThrusterScript>();
 			}
 		}
 		Application.LoadLevel ("level1");

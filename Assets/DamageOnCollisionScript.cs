@@ -14,7 +14,6 @@ public class DamageOnCollisionScript : MonoBehaviour {
 	}
 
 	void OnCollisionStay(Collision collision) {
-		Debug.Log ("Damage on collision hit something...");
 		collision.collider.gameObject.SendMessage ("TakeDamage");
 	}
 }

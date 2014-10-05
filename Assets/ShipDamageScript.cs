@@ -13,8 +13,6 @@ public class ShipDamageScript : MonoBehaviour {
 	}
 
 	public void TakeDamage() {
-
-		Debug.Log ("Taking damage: Inv duration: " + immunityRemaining); 
 		if (immunityRemaining == 0) {
 			immunityRemaining = DAMAGE_IMMUNITY_TIME;
 			--health;		
