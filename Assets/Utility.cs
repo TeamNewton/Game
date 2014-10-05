@@ -24,6 +24,17 @@ public class Utility {
 	}
 
 
+	public static List<GameObject> GetGameObjects() {
+
+		var gameObjects = new List<GameObject>();
+		
+		AddObjectsWithTag(gameObjects, "Command");
+		AddObjectsWithTag(gameObjects, "VehicleBody");
+		AddObjectsWithTag(gameObjects, "Engine");
+
+		return gameObjects;
+	}
+
 	public static void RegisterConnection(GameObject obj, GameObject obj2) {
 		ShipScript script = GetShipScript ();
 		if (script != null) {
@@ -52,11 +63,7 @@ public class Utility {
 	public static void InitializeShipGraph() {
 		ShipScript script = GetShipScript ();
 		if (script != null) {
-			List<GameObject> gameObjects = new List<GameObject>();
-
-			AddObjectsWithTag(gameObjects, "Command");
-			AddObjectsWithTag(gameObjects, "VehicleBody");
-			AddObjectsWithTag(gameObjects, "Engine");
+			List<GameObject> gameObjects = GetGameObjects();
 
 			script.SetConnectableObjects(gameObjects);
 		}

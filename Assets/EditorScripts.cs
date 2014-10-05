@@ -14,7 +14,7 @@ public class EditorScripts : MonoBehaviour {
 			Debug.Log("Is valid: " + Utility.ShipIsValid());
 
 			if (Utility.ShipIsValid()) {
-				Utility.GetShipScript().AddJoints();
+				Utility.GetShipScript().PrepareShipForLevelLoad();
 			}
 		}
 	}

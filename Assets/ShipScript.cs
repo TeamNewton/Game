@@ -80,23 +80,21 @@ public class ShipScript  : MonoBehaviour{
 		return true;
 	}	
 
-	public void AddJoints() {
+	public void PrepareShipForLevelLoad() {
 
 		foreach (GameObject key in shipGraph.Keys) {
 			foreach (GameObject value in shipGraph[key]) {
-
+				Debug.Log ("Preparing..\n");
 				DontDestroyOnLoad (key);
 				JointScript.Attach(key, value);
 
 				Destroy (key.GetComponent<EditorScripts>());
-
+				key.collider.isTrigger = false;
 
 
 			}
 		}
 		Application.LoadLevel ("level1");
-
-
 	}
 
 }

@@ -32,6 +32,11 @@ public class JointScript : MonoBehaviour {
 
 	public static void Detach(GameObject obj1,GameObject obj2) 
 	{
+		DetachJointsBetween (obj1, obj2);
+		DetachJointsBetween (obj2, obj1);		
+	}
+
+	public static void DetachJointsBetween(GameObject obj1, GameObject obj2) {
 		ConfigurableJoint[] joints = obj1.GetComponents<ConfigurableJoint> ();
 		if(joints != null) 
 		{
@@ -43,18 +48,17 @@ public class JointScript : MonoBehaviour {
 				}
 			}
 		}
-		joints = obj2.GetComponents<ConfigurableJoint> ();
+	}
+
+	public static void DetachAllJoints(GameObject obj) {
+		ConfigurableJoint[] joints = obj.GetComponents<ConfigurableJoint> ();
 		if(joints != null) 
 		{
 			foreach(ConfigurableJoint c in joints)
 			{
-				if(c.connectedBody == obj1.GetComponent<Rigidbody>())
-				{
-					Destroy (c);
-				}
+				Destroy (c);
 			}
 		}
-		
 	}
 
 	// Update is called once per frame

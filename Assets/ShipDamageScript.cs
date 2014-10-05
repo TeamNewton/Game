@@ -13,12 +13,14 @@ public class ShipDamageScript : MonoBehaviour {
 	}
 
 	public void TakeDamage() {
+
+		Debug.Log ("Taking damage: Inv duration: " + immunityRemaining); 
 		if (immunityRemaining == 0) {
 			--health;		
 		}
 
 		if (health == 0) {
-			Destroy(gameObject);
+			JointScript.DetachAllJoints(gameObject);
 		}
 	}
 	
