@@ -49,18 +49,7 @@ public class JointScript : MonoBehaviour {
 			}
 		}
 	}
-
-	public static void DetachAllJoints(GameObject obj) {
-		ConfigurableJoint[] joints = obj.GetComponents<ConfigurableJoint> ();
-		if(joints != null) 
-		{
-			foreach(ConfigurableJoint c in joints)
-			{
-				Destroy (c);
-			}
-		}
-	}
-
+	
 	// Update is called once per frame
 	void Update () {
 	

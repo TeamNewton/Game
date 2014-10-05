@@ -11,6 +11,11 @@ public class ShipScript  : MonoBehaviour{
 	
 	}
 
+
+	public Dictionary<GameObject, IList<GameObject>> GetShipGraph() {
+		return shipGraph;
+	}
+
 	public void SetConnectableObjects(List<GameObject> objects) {
 		shipGraph = new Dictionary<GameObject, IList<GameObject>> ();
 		foreach (GameObject obj in objects) {
@@ -90,6 +95,10 @@ public class ShipScript  : MonoBehaviour{
 
 				Destroy (key.GetComponent<EditorScripts>());
 				key.collider.isTrigger = false;
+
+				if (key.tag == "Engine") {
+					key.AddComponent<ThrusterScript>();
+				}
 
 
 			}

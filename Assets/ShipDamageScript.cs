@@ -9,18 +9,23 @@ public class ShipDamageScript : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		immunityRemaining = 0;
-		health = 10;
+		health = 3;
 	}
 
 	public void TakeDamage() {
 
 		Debug.Log ("Taking damage: Inv duration: " + immunityRemaining); 
 		if (immunityRemaining == 0) {
+			immunityRemaining = DAMAGE_IMMUNITY_TIME;
 			--health;		
 		}
 
 		if (health == 0) {
-			JointScript.DetachAllJoints(gameObject);
+			var graph = Utility.GetShipScript().GetShipGraph();
+
+			foreach (GameObject attachedObject in graph[gameObject]) {
+				JointScript.Detach(gameObject, attachedObject);
+			}
 		}
 	}
 	
