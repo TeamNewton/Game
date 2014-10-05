@@ -3,3 +3,4 @@ build_Data/*
 *.exe
 *.dll
 Library/*
+*.userprefs
