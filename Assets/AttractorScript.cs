@@ -17,9 +17,10 @@ public class AttractorScript : MonoBehaviour {
 			}
 
 			var forceVector = obj.transform.position - transform.position;
+			var distanceSqr = forceVector.magnitude*forceVector.magnitude;
 
 
-			obj.rigidbody.AddForce(forceVector.normalized * -0.05f);
+			obj.rigidbody.AddForce(forceVector.normalized * -0.25f/distanceSqr);
 
 
 		}
