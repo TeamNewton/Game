@@ -46,9 +46,7 @@ public class ThrusterScript : MonoBehaviour {
 	void FixedUpdate() {
 		if (Input.GetKey (keyCode)) {
 			// apply force to parent to direction of engine from engine position
-			if(transform.parent != null && transform.parent.gameObject.rigidbody != null) {
-				transform.parent.gameObject.rigidbody.AddForceAtPosition(transform.right * 0.2f, transform.position);
-			}
+			this.gameObject.rigidbody.AddForceAtPosition(transform.right * 0.2f, transform.position);
 		}
 	}
 

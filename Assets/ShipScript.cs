@@ -81,11 +81,21 @@ public class ShipScript  : MonoBehaviour{
 	}	
 
 	public void AddJoints() {
+
 		foreach (GameObject key in shipGraph.Keys) {
 			foreach (GameObject value in shipGraph[key]) {
+
+				DontDestroyOnLoad (key);
 				JointScript.Attach(key, value);
+
+				Destroy (key.GetComponent<EditorScripts>());
+
+
+
 			}
-		} 
+		}
+		Application.LoadLevel ("level1");
+
 
 	}
 
