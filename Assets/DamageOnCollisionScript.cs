@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class FinishLevelScript : MonoBehaviour {
+public class DamageOnCollisionScript : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
@@ -13,8 +13,7 @@ public class FinishLevelScript : MonoBehaviour {
 	
 	}
 
-	void OnTriggerEnter(Collider collider) {
-		// level ending code here
-
+	void OnCollisionEnter(Collision collision) {
+		collision.collider.gameObject.SendMessage ("TakeDamage");
 	}
 }

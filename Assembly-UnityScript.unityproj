@@ -5,11 +5,11 @@
 	<Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
 	<ProductVersion>10.0.20506</ProductVersion>
 	<SchemaVersion>2.0</SchemaVersion>
-	<ProjectGuid>{DDFBC18F-9396-3137-9CFE-DEB2CDB74636}</ProjectGuid>
+	<ProjectGuid>{CFE3DA37-8482-B5E3-F5DB-AC8EBCE34763}</ProjectGuid>
 	<OutputType>Library</OutputType>
 	<AppDesignerFolder>Properties</AppDesignerFolder>
 	<RootNamespace></RootNamespace>
-	<AssemblyName>Assembly-CSharp</AssemblyName>
+	<AssemblyName>Assembly-UnityScript</AssemblyName>
 	<TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
 	<FileAlignment>512</FileAlignment>
 	<BaseDirectory>Assets</BaseDirectory>
@@ -46,20 +46,7 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\AttractorScript.cs" />
-     <Compile Include="Assets\DamageOnCollisionScript.cs" />
-     <Compile Include="Assets\EditorScripts.cs" />
-     <Compile Include="Assets\EngineInitializationScript.cs" />
-     <Compile Include="Assets\FinishLevelScript.cs" />
-     <Compile Include="Assets\JointScript.cs" />
-     <Compile Include="Assets\OnSceneLoad.cs" />
-     <Compile Include="Assets\ShipDamageScript.cs" />
-     <Compile Include="Assets\ShipEditorScript.cs" />
-     <Compile Include="Assets\ShipScript.cs" />
-     <Compile Include="Assets\ThrusterScript.cs" />
-     <Compile Include="Assets\UIInitializationScript.cs" />
-     <Compile Include="Assets\Utility.cs" />
-     <Compile Include="Assets\collisionJointer.cs" />
+     <Compile Include="Assets\NewBehaviourScript.js" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/4.6.0/UnityEngine.UI.dll</HintPath>
  </Reference>

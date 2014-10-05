@@ -47,11 +47,13 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\AttractorScript.cs" />
+     <Compile Include="Assets\DamageOnCollisionScript.cs" />
      <Compile Include="Assets\EditorScripts.cs" />
      <Compile Include="Assets\EngineInitializationScript.cs" />
      <Compile Include="Assets\FinishLevelScript.cs" />
      <Compile Include="Assets\JointScript.cs" />
      <Compile Include="Assets\OnSceneLoad.cs" />
+     <Compile Include="Assets\ShipDamageScript.cs" />
      <Compile Include="Assets\ShipEditorScript.cs" />
      <Compile Include="Assets\ShipScript.cs" />
      <Compile Include="Assets\ThrusterScript.cs" />
