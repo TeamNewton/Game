@@ -46,7 +46,7 @@ public class ThrusterScript : MonoBehaviour {
 	void FixedUpdate() {
 		if (Input.GetKey (keyCode)) {
 			Debug.Log ("Engine activated..");
-			this.gameObject.rigidbody.AddForceAtPosition(transform.right * 0.2f, transform.position);
+			this.gameObject.rigidbody.AddForceAtPosition(transform.right * -0.5f, transform.position);
 		}
 	}
 
