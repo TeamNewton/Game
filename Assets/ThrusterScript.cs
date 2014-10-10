@@ -5,8 +5,12 @@ public class ThrusterScript : MonoBehaviour {
 
 	private static int key = 0;
 	private KeyCode keyCode;
+
+	private Animator animator;
 	// Use this for initialization
 	void Start () {
+
+		animator = GetComponent<Animator> ();
 		Debug.Log ("Assigning key for engine " + key);
 
 		// test code, replace with something more robust
@@ -44,9 +48,20 @@ public class ThrusterScript : MonoBehaviour {
 	}
 
 	void FixedUpdate() {
+
 		if (Input.GetKey (keyCode)) {
-			Debug.Log ("Engine activated..");
-			this.gameObject.rigidbody.AddForceAtPosition(transform.right * -0.5f, transform.position);
+			Debug.Log("Engine on...");
+			if (animator) {
+				Debug.Log ("Has animator..");
+				animator.SetBool("isOn", true);
+			}
+
+			this.gameObject.rigidbody.AddForceAtPosition(transform.right * 0.3f, transform.position);
+
+		} else {
+			if (animator) {
+				animator.SetBool("isOn", false);
+			}
 		}
 	}
 
