@@ -62,10 +62,12 @@ public class Utility {
 	}
 
 	public static void InitializeShipGraph() {
+
 		ShipScript script = GetShipScript ();
 		if (script != null) {
+			
+			Debug.Log ("Initializing ship graph");
 			List<GameObject> gameObjects = GetGameObjects();
-
 			script.SetConnectableObjects(gameObjects);
 		}
 	}

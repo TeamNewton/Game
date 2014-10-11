@@ -15,6 +15,7 @@ public class EditorScripts : MonoBehaviour {
 
 			if (Utility.ShipIsValid()) {
 				Utility.GetShipScript().PrepareShipForLevelLoad();
+				Application.LoadLevel ("level1");
 			}
 		}
 	}

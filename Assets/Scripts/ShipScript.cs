@@ -6,7 +6,22 @@ public class ShipScript  : MonoBehaviour{
 	ShipGraph shipGraph;
 
 	public void Start() {
-		shipGraph = new ShipGraph();
+
+	}
+
+	// move ship to start pos
+	void OnLevelWasLoaded(int level) {
+		Debug.Log ("Level loaded!");		
+
+		var commandModule = GameObject.FindGameObjectWithTag ("Command");
+		var commandPosition = commandModule.transform.position;
+		var startPos = GameObject.FindGameObjectWithTag ("StartPos");
+
+		foreach (GameObject o in shipGraph.Graph.Keys) {
+			var relativePosition = commandPosition - o.transform.position;
+			Debug.Log ("Relative: " + relativePosition); 
+			o.transform.position = startPos.transform.position - relativePosition;
+		}
 	}
 
 	public Dictionary<GameObject, IList<GameObject>> GetShipGraph() {
@@ -14,6 +29,7 @@ public class ShipScript  : MonoBehaviour{
 	}
 
 	public void SetConnectableObjects(List<GameObject> objects) {
+		shipGraph = new ShipGraph();
 		shipGraph.Initialize (objects);
 	}
 
@@ -47,16 +63,12 @@ public class ShipScript  : MonoBehaviour{
 			Destroy (key.GetComponent<ShipEditorScript>());
 			DontDestroyOnLoad (key);
 			if (key.tag == "Engine") {
-				Debug.Log ("Adding engine script..");
 				key.AddComponent<ThrusterScript>();
 			}
 		}
-		Application.LoadLevel ("level1");
 	}
 
-	// returns false if there wasn't enough fuel to consume and does not consume the fuel
-	// otherwise consumes the fuel and returns true
-	public bool ConsumeFuelIfEnough(float amount) {
+	public float RemainingFuel() {
 		var fuelTanks = shipGraph.GetConnectedModulesWithTag ("FuelTank");
 		float fuelRemaining = 0;
 		
@@ -65,6 +77,15 @@ public class ShipScript  : MonoBehaviour{
 			fuelRemaining += script.Fuel;
 		}
 
+		return fuelRemaining;
+	}
+
+	// returns false if there wasn't enough fuel to consume and does not consume the fuel
+	// otherwise consumes the fuel and returns true
+	public bool ConsumeFuelIfEnough(float amount) {
+		var fuelTanks = shipGraph.GetConnectedModulesWithTag ("FuelTank");
+
+		float fuelRemaining = RemainingFuel ();
 		Debug.Log ("Fuel remaining: " + fuelRemaining);
 
 		if (fuelRemaining <= amount) {
