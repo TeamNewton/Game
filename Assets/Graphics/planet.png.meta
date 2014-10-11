@@ -1,7 +1,8 @@
 fileFormatVersion: 2
-guid: aae2e9c913fdbaa40adcf39f63c81bfe
+guid: 672f077b47a29e24eb2e457187235d3e
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: planet
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0

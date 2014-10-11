@@ -50,23 +50,6 @@ public class ShipScript  : MonoBehaviour{
 		return shipGraph.ModuleConnected(obj);
 	}
 
-	public void PrepareShipForLevelLoad() {
-
-		Dictionary<GameObject, IList<GameObject>> graph = shipGraph.Graph;
-
-		foreach (GameObject key in graph.Keys) {
-			foreach (GameObject value in graph[key]) {
-				JointScript.Attach(key, value);
-			}
-
-			key.collider.isTrigger = false;
-			Destroy (key.GetComponent<ShipEditorScript>());
-			DontDestroyOnLoad (key);
-			if (key.tag == "Engine") {
-				key.AddComponent<ThrusterScript>();
-			}
-		}
-	}
 
 	public float RemainingFuel() {
 		var fuelTanks = shipGraph.GetConnectedModulesWithTag ("FuelTank");
@@ -101,6 +84,25 @@ public class ShipScript  : MonoBehaviour{
 
 	public void Update() {
 		shipGraph.CalculateConnections ();
+	}
+
+	
+	public void PrepareShipForLevelLoad() {
+		
+		Dictionary<GameObject, IList<GameObject>> graph = shipGraph.Graph;
+		
+		foreach (GameObject key in graph.Keys) {
+			foreach (GameObject value in graph[key]) {
+				JointScript.Attach(key, value);
+			}
+			
+			key.collider.isTrigger = false;
+			Destroy (key.GetComponent<ShipEditorScript>());
+			DontDestroyOnLoad (key);
+			if (key.tag == "Engine") {
+				key.AddComponent<ThrusterScript>();
+			}
+		}
 	}
 
 }
