@@ -49,10 +49,8 @@ public class ThrusterScript : MonoBehaviour {
 
 	void FixedUpdate() {
 
-		if (Input.GetKey (keyCode)) {
-			Debug.Log("Engine on...");
+		if (Input.GetKey (keyCode) && Utility.GetShipScript().IsConnectedToShip(gameObject)) {
 			if (animator) {
-				Debug.Log ("Has animator..");
 				animator.SetBool("isOn", true);
 			}
 

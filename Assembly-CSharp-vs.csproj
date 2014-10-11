@@ -55,6 +55,7 @@
      <Compile Include="Assets\Scripts\OnSceneLoad.cs" />
      <Compile Include="Assets\Scripts\ShipDamageScript.cs" />
      <Compile Include="Assets\Scripts\ShipEditorScript.cs" />
+     <Compile Include="Assets\Scripts\ShipGraph.cs" />
      <Compile Include="Assets\Scripts\ShipScript.cs" />
      <Compile Include="Assets\Scripts\ThrusterScript.cs" />
      <Compile Include="Assets\Scripts\UIInitializationScript.cs" />
