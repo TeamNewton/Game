@@ -52,13 +52,11 @@
      <Compile Include="Assets\Scripts\EngineInitializationScript.cs" />
      <Compile Include="Assets\Scripts\FinishLevelScript.cs" />
      <Compile Include="Assets\Scripts\JointScript.cs" />
-     <Compile Include="Assets\Scripts\OnSceneLoad.cs" />
      <Compile Include="Assets\Scripts\ShipDamageScript.cs" />
      <Compile Include="Assets\Scripts\ShipEditorScript.cs" />
      <Compile Include="Assets\Scripts\ShipGraph.cs" />
      <Compile Include="Assets\Scripts\ShipScript.cs" />
      <Compile Include="Assets\Scripts\ThrusterScript.cs" />
-     <Compile Include="Assets\Scripts\UIInitializationScript.cs" />
      <Compile Include="Assets\Scripts\Utility.cs" />
      <Compile Include="Assets\Scripts\collisionJointer.cs" />
  <Reference Include="UnityEngine.UI">
