@@ -5,11 +5,11 @@
 	<Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
 	<ProductVersion>10.0.20506</ProductVersion>
 	<SchemaVersion>2.0</SchemaVersion>
-	<ProjectGuid>{DDFBC18F-9396-3137-9CFE-DEB2CDB74636}</ProjectGuid>
+	<ProjectGuid>{6F824ECF-F2BC-827E-A29D-FB10759A3283}</ProjectGuid>
 	<OutputType>Library</OutputType>
 	<AppDesignerFolder>Properties</AppDesignerFolder>
 	<RootNamespace></RootNamespace>
-	<AssemblyName>Assembly-CSharp</AssemblyName>
+	<AssemblyName>Assembly-UnityScript-firstpass</AssemblyName>
 	<TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
 	<FileAlignment>512</FileAlignment>
 	<BaseDirectory>Assets</BaseDirectory>
@@ -46,24 +46,7 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Scripts\AttractorScript.cs" />
-     <Compile Include="Assets\Scripts\CameraFollowScript.cs" />
-     <Compile Include="Assets\Scripts\DamageOnCollisionScript.cs" />
-     <Compile Include="Assets\Scripts\EditorScripts.cs" />
-     <Compile Include="Assets\Scripts\EngineInitializationScript.cs" />
-     <Compile Include="Assets\Scripts\FinishLevelScript.cs" />
-     <Compile Include="Assets\Scripts\FuelTankScript.cs" />
-     <Compile Include="Assets\Scripts\JointScript.cs" />
-     <Compile Include="Assets\Scripts\ShipDamageScript.cs" />
-     <Compile Include="Assets\Scripts\ShipEditorScript.cs" />
-     <Compile Include="Assets\Scripts\ShipGraph.cs" />
-     <Compile Include="Assets\Scripts\ShipScript.cs" />
-     <Compile Include="Assets\Scripts\ThrusterScript.cs" />
-     <Compile Include="Assets\Scripts\Utility.cs" />
-     <Compile Include="Assets\Scripts\collisionJointer.cs" />
- <Reference Include="Assembly-UnityScript-firstpass">
- <HintPath>C:/Users/Omistaja/Documents/TestiProjekti/Game/Library/ScriptAssemblies/Assembly-UnityScript-firstpass.dll</HintPath>
- </Reference>
+     <Compile Include="Assets\Standard Assets\Scripts\Camera Scripts\SmoothFollow.js" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/4.6.0/UnityEngine.UI.dll</HintPath>
  </Reference>

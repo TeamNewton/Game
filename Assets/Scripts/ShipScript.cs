@@ -11,15 +11,11 @@ public class ShipScript  : MonoBehaviour{
 
 	// move ship to start pos
 	void OnLevelWasLoaded(int level) {
-		Debug.Log ("Level loaded!");		
-
-		var commandModule = GameObject.FindGameObjectWithTag ("Command");
-		var commandPosition = commandModule.transform.position;
+		var commandPosition = transform.position;
 		var startPos = GameObject.FindGameObjectWithTag ("StartPos");
 
 		foreach (GameObject o in shipGraph.Graph.Keys) {
 			var relativePosition = commandPosition - o.transform.position;
-			Debug.Log ("Relative: " + relativePosition); 
 			o.transform.position = startPos.transform.position - relativePosition;
 		}
 	}
