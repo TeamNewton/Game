@@ -63,6 +63,8 @@ public class ShipScript  : MonoBehaviour{
 		
 		Queue<GameObject> queue = new Queue<GameObject> ();
 		queue.Enqueue(objects [0]);
+		discoveredObjects[objects[0]] = true;
+
 
 
 		while (queue.Count > 0) {
@@ -70,10 +72,11 @@ public class ShipScript  : MonoBehaviour{
 			foreach (GameObject obj in shipGraph[node]) {
 				if (discoveredObjects[obj] == false) {
 					queue.Enqueue (obj);
+					discoveredObjects[obj] = true;
 				}
 			}			
 
-			discoveredObjects[node] = true;
+
 		}
 
 		foreach (bool discoveryStatus in discoveredObjects.Values) {
