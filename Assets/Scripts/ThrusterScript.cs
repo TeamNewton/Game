@@ -4,6 +4,7 @@ using System.Collections;
 public class ThrusterScript : MonoBehaviour {
 
 	private static int key = 0;
+	private float FUEL_CONSUMPTION = 1;
 	private KeyCode keyCode;
 
 	private Animator animator;
@@ -49,7 +50,8 @@ public class ThrusterScript : MonoBehaviour {
 
 	void FixedUpdate() {
 
-		if (Input.GetKey (keyCode) && Utility.GetShipScript().IsConnectedToShip(gameObject)) {
+		var shipScript = Utility.GetShipScript ();
+		if (Input.GetKey (keyCode) && shipScript.IsConnectedToShip(gameObject) && shipScript.ConsumeFuelIfEnough(FUEL_CONSUMPTION)) {
 			if (animator) {
 				animator.SetBool("isOn", true);
 			}

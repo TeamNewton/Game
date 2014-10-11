@@ -54,6 +54,29 @@ public class ShipScript  : MonoBehaviour{
 		Application.LoadLevel ("level1");
 	}
 
+	// returns false if there wasn't enough fuel to consume and does not consume the fuel
+	// otherwise consumes the fuel and returns true
+	public bool ConsumeFuelIfEnough(float amount) {
+		var fuelTanks = shipGraph.GetConnectedModulesWithTag ("FuelTank");
+		float fuelRemaining = 0;
+		
+		foreach (GameObject tank in fuelTanks) {
+			var script = tank.GetComponent<FuelTankScript>();
+			fuelRemaining += script.Fuel;
+		}
+
+		Debug.Log ("Fuel remaining: " + fuelRemaining);
+
+		if (fuelRemaining <= amount) {
+			return false;
+		}
+
+		foreach (GameObject tank in fuelTanks) {
+			var script = tank.GetComponent<FuelTankScript>();
+			script.ConsumeFuel(amount/fuelTanks.Count);
+		}
+		return true;
+	}
 
 	public void Update() {
 		shipGraph.CalculateConnections ();

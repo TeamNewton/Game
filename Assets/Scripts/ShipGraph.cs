@@ -90,6 +90,17 @@ public class ShipGraph {
 		return connectedToCommandModule[obj];
 	}
 
+	public List<GameObject> GetConnectedModulesWithTag(string tag) {
+		List<GameObject> modules = new List<GameObject>();
+
+		foreach (GameObject obj in connectedToCommandModule.Keys) {
+			if (connectedToCommandModule[obj] == true && obj.tag == tag) {
+				modules.Add (obj);
+			}
+		} 
+
+		return modules;
+	}
 
 
 }
