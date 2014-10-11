@@ -31,6 +31,7 @@ public class Utility {
 		AddObjectsWithTag(gameObjects, "Command");
 		AddObjectsWithTag(gameObjects, "VehicleBody");
 		AddObjectsWithTag(gameObjects, "Engine");
+		AddObjectsWithTag(gameObjects, "FuelTank");
 
 		return gameObjects;
 	}
