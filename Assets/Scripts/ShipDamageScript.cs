@@ -1,5 +1,5 @@
 ﻿using UnityEngine;
-using System.Collections;
+using System.Collections.Generic;
 
 public class ShipDamageScript : MonoBehaviour {
 	private int health;
@@ -19,11 +19,17 @@ public class ShipDamageScript : MonoBehaviour {
 		}
 
 		if (health == 0) {
-			var graph = Utility.GetShipScript().GetShipGraph();
+			var shipScript = Utility.GetShipScript();
+			var graph = shipScript.GetShipGraph();
 
-			foreach (GameObject attachedObject in graph[gameObject]) {
+			// cannot iterate over list when it is being modified; must copy the objects into separate list
+			var attachedObjects= new List<GameObject>(graph[gameObject]);
+			foreach (GameObject attachedObject in attachedObjects) {
 				JointScript.Detach(gameObject, attachedObject);
+				shipScript.RemoveConnection(gameObject, attachedObject);
 			}
+
+
 		}
 	}
 	
