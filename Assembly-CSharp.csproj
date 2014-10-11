@@ -50,6 +50,7 @@
      <Compile Include="Assets\Scripts\CameraFollowScript.cs" />
      <Compile Include="Assets\Scripts\DamageOnCollisionScript.cs" />
      <Compile Include="Assets\Scripts\EditorScripts.cs" />
+     <Compile Include="Assets\Scripts\Enforce2DBehaviourScript.cs" />
      <Compile Include="Assets\Scripts\EngineInitializationScript.cs" />
      <Compile Include="Assets\Scripts\FinishLevelScript.cs" />
      <Compile Include="Assets\Scripts\FuelTankScript.cs" />
