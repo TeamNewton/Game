@@ -9,7 +9,7 @@ public class AttractorScript : MonoBehaviour {
 	}
 
 	void FixedUpdate() {
-		GameObject[] objects = GameObject.FindGameObjectsWithTag("VehicleBody");
+		var objects = Utility.GetGameObjects ();
 
 		foreach (GameObject obj in objects) {
 			if (obj.rigidbody == null) {
