@@ -55,11 +55,19 @@ public class ThrusterScript : MonoBehaviour {
 				animator.SetBool("isOn", true);
 			}
 
-			this.gameObject.rigidbody.AddForceAtPosition(transform.right * 0.3f, transform.position);
+			if (audio && !audio.isPlaying) {
+				audio.Play();
+			}
+
+			rigidbody.AddForceAtPosition(transform.right * 0.3f, transform.position);
 
 		} else {
 			if (animator) {
 				animator.SetBool("isOn", false);
+			}
+
+			if (audio && audio.isPlaying) {
+				audio.Stop();
 			}
 		}
 	}
