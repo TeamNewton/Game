@@ -53,6 +53,7 @@
      <Compile Include="Assets\Scripts\Enforce2DBehaviourScript.cs" />
      <Compile Include="Assets\Scripts\EngineInitializationScript.cs" />
      <Compile Include="Assets\Scripts\FinishLevelScript.cs" />
+     <Compile Include="Assets\Scripts\FuelBarScript.cs" />
      <Compile Include="Assets\Scripts\FuelTankScript.cs" />
      <Compile Include="Assets\Scripts\JointScript.cs" />
      <Compile Include="Assets\Scripts\ShipDamageScript.cs" />
@@ -62,13 +63,10 @@
      <Compile Include="Assets\Scripts\ThrusterScript.cs" />
      <Compile Include="Assets\Scripts\Utility.cs" />
      <Compile Include="Assets\Scripts\collisionJointer.cs" />
+     <None Include="Assets\Shaders\HealthBarShader.shader" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/4.6.0/UnityEngine.UI.dll</HintPath>
  </Reference>
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="Assembly-UnityScript-firstpass.unityproj">
-      <Project>{6F824ECF-F2BC-827E-A29D-FB10759A3283}</Project>      <Name>Assembly-UnityScript-firstpass</Name>    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -18,7 +18,9 @@ public class CameraFollowScript : MonoBehaviour {
 	}
 
 	void Update () {
-		camera.transform.position = new Vector3 (command.transform.position.x, command.transform.position.y, camera.transform.position.z);
+		if (command != null) {
+			camera.transform.position = new Vector3 (command.transform.position.x, command.transform.position.y, camera.transform.position.z);
+		}
 	}
 
 }

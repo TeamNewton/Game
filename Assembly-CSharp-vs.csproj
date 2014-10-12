@@ -53,6 +53,7 @@
      <Compile Include="Assets\Scripts\Enforce2DBehaviourScript.cs" />
      <Compile Include="Assets\Scripts\EngineInitializationScript.cs" />
      <Compile Include="Assets\Scripts\FinishLevelScript.cs" />
+     <Compile Include="Assets\Scripts\FuelBarScript.cs" />
      <Compile Include="Assets\Scripts\FuelTankScript.cs" />
      <Compile Include="Assets\Scripts\JointScript.cs" />
      <Compile Include="Assets\Scripts\ShipDamageScript.cs" />
@@ -62,9 +63,7 @@
      <Compile Include="Assets\Scripts\ThrusterScript.cs" />
      <Compile Include="Assets\Scripts\Utility.cs" />
      <Compile Include="Assets\Scripts\collisionJointer.cs" />
- <Reference Include="Assembly-UnityScript-firstpass">
- <HintPath>C:/Users/Omistaja/Documents/TestiProjekti/Game/Library/ScriptAssemblies/Assembly-UnityScript-firstpass.dll</HintPath>
- </Reference>
+     <None Include="Assets\Shaders\HealthBarShader.shader" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/4.6.0/UnityEngine.UI.dll</HintPath>
  </Reference>

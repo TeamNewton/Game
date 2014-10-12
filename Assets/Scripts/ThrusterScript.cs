@@ -12,7 +12,6 @@ public class ThrusterScript : MonoBehaviour {
 	void Start () {
 
 		animator = GetComponent<Animator> ();
-		Debug.Log ("Assigning key for engine " + key);
 
 		// test code, replace with something more robust
 		switch (key) {
@@ -59,12 +58,6 @@ public class ThrusterScript : MonoBehaviour {
 			this.gameObject.rigidbody.AddForceAtPosition(transform.right * 0.3f, transform.position);
 
 		} else {
-			if (Input.GetKey (keyCode)) {
-				Debug.Log ("Engine connected: " + shipScript.IsConnectedToShip(gameObject));
-				Debug.Log ("Fuel remaining:  " + shipScript.RemainingFuel());
-			}
-
-
 			if (animator) {
 				animator.SetBool("isOn", false);
 			}
