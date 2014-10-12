@@ -106,6 +106,7 @@ public class ShipScript  : MonoBehaviour{
 			key.collider.isTrigger = false;
 			Destroy (key.GetComponent<ShipEditorScript>());
 
+			key.AddComponent<DamageOnCollisionScript>();
 			key.AddComponent<Enforce2DBehaviourScript>();
 			DontDestroyOnLoad (key);
 			if (key.tag == "Engine") {

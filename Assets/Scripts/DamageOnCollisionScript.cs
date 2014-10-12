@@ -5,7 +5,6 @@ public class DamageOnCollisionScript : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-	
 	}
 	
 	// Update is called once per frame
@@ -14,6 +13,6 @@ public class DamageOnCollisionScript : MonoBehaviour {
 	}
 
 	void OnCollisionStay(Collision collision) {
-		collision.collider.gameObject.SendMessage ("TakeDamage");
+		collision.collider.gameObject.SendMessage ("TakeDamage", SendMessageOptions.DontRequireReceiver);
 	}
 }
