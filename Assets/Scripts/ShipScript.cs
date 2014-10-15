@@ -111,6 +111,12 @@ public class ShipScript  : MonoBehaviour{
 			DontDestroyOnLoad (key);
 			if (key.tag == "Engine") {
 				key.AddComponent<ThrusterScript>();
+				ThrusterScript thrusterScript = key.GetComponent<ThrusterScript>();
+				KeyScript keyScript = key.GetComponent<KeyScript>();
+
+				thrusterScript.setKeyCode(keyScript.key);
+				Destroy (keyScript);
+
 			}
 		}
 	}

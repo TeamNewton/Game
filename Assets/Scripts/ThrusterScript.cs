@@ -3,7 +3,6 @@ using System.Collections;
 
 public class ThrusterScript : MonoBehaviour {
 
-	private static int key = 0;
 	private float FUEL_CONSUMPTION = 1;
 	private KeyCode keyCode;
 
@@ -12,39 +11,12 @@ public class ThrusterScript : MonoBehaviour {
 	void Start () {
 
 		animator = GetComponent<Animator> ();
-
-		// test code, replace with something more robust
-		switch (key) {
-		case 0:
-			
-			keyCode = KeyCode.Keypad0;
-			break;
-
-		case 1:
-			
-			keyCode = KeyCode.Keypad1;
-			break;
-
-		case 2:
-			
-			keyCode = KeyCode.Keypad2;
-			break;
-		case 3:
-			
-			keyCode = KeyCode.Keypad3;
-			break;
-		case 4:
-			
-			keyCode = KeyCode.Keypad4;
-			break;
-
-		default:
-			keyCode = KeyCode.Keypad5;
-			break;
 		
-		}
+	}
 
-		++key;
+	public void setKeyCode(KeyCode key)
+	{
+		keyCode = key;
 	}
 
 	void FixedUpdate() {
@@ -59,6 +31,7 @@ public class ThrusterScript : MonoBehaviour {
 				audio.Play();
 			}
 
+			Debug.Log("Actived engine with key: " + keyCode);
 			rigidbody.AddForceAtPosition(transform.right * 0.3f, transform.position);
 
 		} else {

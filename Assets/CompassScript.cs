@@ -14,7 +14,6 @@ public class CompassScript : MonoBehaviour {
 		
 		
 		float angle = Mathf.Atan2 (deltaY, deltaX) * 180 / Mathf.PI;
-		Debug.Log ("DeltaX"+deltaX+"DeltaY: " +deltaY+"angle: " + angle);
 		
 		
 		this.gameObject.transform.eulerAngles = new Vector3 (0, 0, angle);

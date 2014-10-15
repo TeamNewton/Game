@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\CompassScript.cs" />
+     <Compile Include="Assets\KeyScript.cs" />
      <Compile Include="Assets\Scripts\AttractorScript.cs" />
      <Compile Include="Assets\Scripts\CameraFollowScript.cs" />
      <Compile Include="Assets\Scripts\DamageOnCollisionScript.cs" />
