@@ -63,6 +63,7 @@
      <Compile Include="Assets\Scripts\ShipGraph.cs" />
      <Compile Include="Assets\Scripts\ShipScript.cs" />
      <Compile Include="Assets\Scripts\ThrusterScript.cs" />
+     <Compile Include="Assets\Scripts\UserKeyPressScript.cs" />
      <Compile Include="Assets\Scripts\Utility.cs" />
      <Compile Include="Assets\Scripts\collisionJointer.cs" />
      <None Include="Assets\Shaders\HealthBarShader.shader" />

@@ -11,8 +11,12 @@ public class ShipScript  : MonoBehaviour{
 
 	// move ship to start pos
 	void OnLevelWasLoaded(int level) {
-		var commandPosition = transform.position;
+	
 		var startPos = GameObject.FindGameObjectWithTag ("StartPos");
+		if (startPos == null) {
+			return;		
+		}
+		var commandPosition = transform.position;
 
 		foreach (GameObject o in shipGraph.Graph.Keys) {
 			var relativePosition = commandPosition - o.transform.position;
@@ -90,7 +94,11 @@ public class ShipScript  : MonoBehaviour{
 	}
 
 	public void Update() {
-		shipGraph.CalculateConnections ();
+		if (shipGraph == null) {
+			Utility.InitializeShipGraph ();		
+		} else {
+			shipGraph.CalculateConnections ();
+		}
 	}
 
 	
@@ -120,5 +128,6 @@ public class ShipScript  : MonoBehaviour{
 			}
 		}
 	}
+
 
 }
