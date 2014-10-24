@@ -14,11 +14,7 @@ public class UserKeyPressScript : MonoBehaviour {
 			Debug.Log ("Quitter");
 			Application.Quit();
 		} else if (Input.GetKey (KeyCode.F5)) {
-			var shipGraph = Utility.GetShipScript().GetShipGraph();
-			foreach (GameObject o in shipGraph.Keys) {
-				GameObject.Destroy(o);
-			}
-
+			Utility.DestroyShip();
 			Application.LoadLevel("alus1scene");
 		}
 

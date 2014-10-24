@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+
 public class FinishLevelScript : MonoBehaviour {
 
 	// Use this for initialization
@@ -14,7 +15,10 @@ public class FinishLevelScript : MonoBehaviour {
 	}
 
 	void OnTriggerEnter(Collider collider) {
-		// level ending code here
+		if (collider.gameObject.tag == "Command") {
+			Utility.DestroyShip();
+			Application.LoadLevel("Winner");
+		}
 
 	}
 }

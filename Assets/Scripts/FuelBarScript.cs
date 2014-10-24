@@ -21,7 +21,11 @@ public class FuelBarScript : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+
 		var script = Utility.GetShipScript ();
+		if (script == null) {
+			return;		
+		}
 		percent = script.RemainingFuel () / maxFuel;
 
 		// I don't even try to pretend how this actually works

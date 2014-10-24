@@ -50,6 +50,22 @@ public class Utility {
 		}
 	}
 
+	public static void DestroyShip() {
+		var shipScript = Utility.GetShipScript ();
+		if (shipScript == null) {
+			return;		
+		}
+
+		var shipGraph = shipScript.GetShipGraph();
+		if (shipGraph == null) {
+			return;		
+		}
+
+		foreach (GameObject o in shipGraph.Keys) {
+			GameObject.Destroy(o);
+		}
+	}
+
 
 	public static bool ShipIsValid() {
 		ShipScript script = GetShipScript ();
