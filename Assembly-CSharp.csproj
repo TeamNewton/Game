@@ -46,10 +46,9 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\CompassScript.cs" />
-     <Compile Include="Assets\KeyScript.cs" />
      <Compile Include="Assets\Scripts\AttractorScript.cs" />
      <Compile Include="Assets\Scripts\CameraFollowScript.cs" />
+     <Compile Include="Assets\Scripts\CompassScript.cs" />
      <Compile Include="Assets\Scripts\DamageOnCollisionScript.cs" />
      <Compile Include="Assets\Scripts\EditorScripts.cs" />
      <Compile Include="Assets\Scripts\Enforce2DBehaviourScript.cs" />
@@ -58,6 +57,7 @@
      <Compile Include="Assets\Scripts\FuelBarScript.cs" />
      <Compile Include="Assets\Scripts\FuelTankScript.cs" />
      <Compile Include="Assets\Scripts\JointScript.cs" />
+     <Compile Include="Assets\Scripts\KeyScript.cs" />
      <Compile Include="Assets\Scripts\ShipDamageScript.cs" />
      <Compile Include="Assets\Scripts\ShipEditorScript.cs" />
      <Compile Include="Assets\Scripts\ShipGraph.cs" />

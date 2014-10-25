@@ -116,6 +116,8 @@ public class ShipScript  : MonoBehaviour{
 
 			key.AddComponent<DamageOnCollisionScript>();
 			key.AddComponent<Enforce2DBehaviourScript>();
+
+
 			DontDestroyOnLoad (key);
 			if (key.tag == "Engine") {
 				key.AddComponent<ThrusterScript>();
@@ -124,7 +126,7 @@ public class ShipScript  : MonoBehaviour{
 
 				thrusterScript.setKeyCode(keyScript.key);
 				Destroy (keyScript);
-
+				Destroy (key.transform.Find("EngineKeyText").gameObject);
 			}
 		}
 	}
