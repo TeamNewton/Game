@@ -22,6 +22,7 @@ public class ThrusterScript : MonoBehaviour {
 	void FixedUpdate() {
 
 		var shipScript = Utility.GetShipScript ();
+		var strength = 0.4f;
 		if (Input.GetKey (keyCode) && shipScript.IsConnectedToShip(gameObject) && shipScript.ConsumeFuelIfEnough(FUEL_CONSUMPTION)) {
 			if (animator) {
 				animator.SetBool("isOn", true);
@@ -32,7 +33,7 @@ public class ThrusterScript : MonoBehaviour {
 			}
 
 			Debug.Log("Actived engine with key: " + keyCode);
-			rigidbody.AddForceAtPosition(transform.right * 0.3f, transform.position);
+			rigidbody.AddForceAtPosition(transform.right * strength, transform.position);
 
 		} else {
 			if (animator) {

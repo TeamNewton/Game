@@ -22,17 +22,19 @@ public class ShipEditorScript : MonoBehaviour {
 	{
 		if (Input.GetKey (KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift)) {
 			Vector3 currentMousePosition = Input.mousePosition;
-
-			float difference = oldMousePosition.x - currentMousePosition.x; // + (currentMousePosition.y - oldMousePosition.y);
-			transform.Rotate(new Vector3(0, 0, 1*difference));
-
-			oldMousePosition = currentMousePosition;
-		
+			float difference = oldMousePosition.x - currentMousePosition.x; 
+			transform.Rotate(new Vector3(0, 0, 1*difference));		
+			oldMousePosition = Input.mousePosition;
 		} else {
+
+
 			Vector3 curScreenPoint = new Vector3(Input.mousePosition.x, Input.mousePosition.y, screenPoint.z);
 			Vector3 curPosition = Camera.main.ScreenToWorldPoint(curScreenPoint) + offset;
 			transform.position = curPosition;
 		}
+
+		
+
 	}
 
 

@@ -18,7 +18,7 @@ public class PusherScript : MonoBehaviour {
 			
 			var forceVector = obj.transform.position - transform.position;
 			var distanceSqr = Mathf.Max(forceVector.magnitude*forceVector.magnitude, 0.25f);
-			var strength = 1.0f;
+			var strength = 1.25f;
 			
 			obj.rigidbody.AddForce(forceVector.normalized * strength/distanceSqr);
 			

@@ -6,14 +6,13 @@ public class CompassScript : MonoBehaviour {
 	void Point()
 	{
 		GameObject goal = Utility.FindNearestBodyWithTag ("Finish", this.gameObject);
-		GameObject player = Utility.FindNearestBodyWithTag ("Command", this.gameObject);
 
-		if (goal == null || player == null) {
+		if (goal == null) {
 			return;		
 		}
 		
-		float deltaY = goal.transform.position.y - player.transform.position.y;
-		float deltaX = goal.transform.position.x - player.transform.position.x;
+		float deltaY = goal.transform.position.y - transform.position.y;
+		float deltaX = goal.transform.position.x - transform.position.x;
 		
 		
 		
