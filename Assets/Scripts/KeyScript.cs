@@ -16,7 +16,6 @@ public class KeyScript : MonoBehaviour {
 
 		if (Input.GetMouseButtonDown (1)) 
 		{
-			Debug.Log("Selected!");
 			selected = true;
 		}
 	}
@@ -37,7 +36,6 @@ public class KeyScript : MonoBehaviour {
 			if(e.keyCode != KeyCode.None)
 			{
 				selected = false;
-				Debug.Log("Key bound: " + e.keyCode);
 				transform.Find ("EngineKeyText").gameObject.GetComponent<TextMesh>().text = e.keyCode.ToString();
 	
 				return e.keyCode;

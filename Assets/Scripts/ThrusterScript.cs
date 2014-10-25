@@ -32,7 +32,6 @@ public class ThrusterScript : MonoBehaviour {
 				audio.Play();
 			}
 
-			Debug.Log("Actived engine with key: " + keyCode);
 			rigidbody.AddForceAtPosition(transform.right * strength, transform.position);
 
 		} else {

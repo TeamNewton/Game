@@ -33,7 +33,6 @@ public class FuelBarScript : MonoBehaviour {
 		// and when it has 0.74, fuel bar is completely visible
 
 		if (oldPercent != percent) {
-			Debug.Log("Percent: " +  percent);
 			oldPercent = percent;
 			percent = percent * 0.47f + 0.27f;
 			renderer.material.SetTextureOffset ("_MaskTex", Vector2.right * (1 - 2*percent));
