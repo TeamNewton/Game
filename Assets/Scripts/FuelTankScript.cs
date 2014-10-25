@@ -6,7 +6,7 @@ public class FuelTankScript : MonoBehaviour {
 	// engine consumes n units of fuel per single fixed update 
 	// (default every 20ms)
 	// so this should be scaled using that
-	private const float maxFuelCapacity = 50*20; // using default time step, enough fuel for 20 seconds for singe engine
+	private const float maxFuelCapacity = 50*50; // using default time step (50 ticks per second), enough fuel for 50 seconds for singe engine
 	private float currentCapacity;
 
 	// Use this for initialization

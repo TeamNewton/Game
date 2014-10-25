@@ -58,6 +58,7 @@
      <Compile Include="Assets\Scripts\FuelTankScript.cs" />
      <Compile Include="Assets\Scripts\JointScript.cs" />
      <Compile Include="Assets\Scripts\KeyScript.cs" />
+     <Compile Include="Assets\Scripts\PusherScript.cs" />
      <Compile Include="Assets\Scripts\ShipDamageScript.cs" />
      <Compile Include="Assets\Scripts\ShipEditorScript.cs" />
      <Compile Include="Assets\Scripts\ShipGraph.cs" />
